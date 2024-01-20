@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Disaster Prediction System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    button,
+    .button {
+      @apply bg-primary hover:bg-opacity-75 px-2 py-1 text-white text-lg rounded-lg cursor-pointer;
+    }
+
+    input {
+      @apply px-3 py-2 bg-transparent outline-none border border-primary focus:ring-2 ring-primary rounded-lg;
+    }
+
+    .field {
+      @apply flex flex-col gap-1;
+    }
+  </style>
+</head>
+
+<body class="w-full h-screen bg-primary bg-opacity-5">
+  <div class="p-5">
+    <h2 class="text-center text-4xl font-semibold my-8">
+      Disaster Prediction System
+    </h2>
+    <div class="flex justify-center items-center gap-5">
+      <a class="!bg-yellow-500 button" href="/?type=windstorm">
+        Predict Windstorm
+      </a>
+      <a class="!bg-orange-500 button" href="/?type=landslide">
+        Predict Landslide
+      </a>
+      <a class="!bg-blue-500 button" href="/?type=flood"> Predict Flood </a>
+      <a class="!bg-red-500 button" href="/?type=earthquake">
+        Predict Earthquake
+      </a>
+    </div>
+  </div>
+  <div
+    class="min-h-[calc(100vh-180px)] p-5 flex flex-col justify-center items-center gap-5"
+  >
+    <h3 class="text-center text-3xl font-semibold mb-5" id="type"></h3>
+
+    <div
+      class="max-w-2xl flex justify-center items-center gap-5 flex-wrap"
+      id="windstorm"
+    >
+      <div class="field">
+        <label>Temperature</label>
+        <input
+          placeholder="Temperature"
+          type="number"
+          id="windstorm_temperature"
+        />
+      </div>
+      <div class="field">
+        <label>Relative Humidity</label>
+        <input
+          placeholder="Relative Humidity"
+          type="number"
+          id="windstorm_relative_humidity"
+        />
+      </div>
+      <div class="field">
+        <label>Pressure</label>
+        <input placeholder="Pressure" type="number" id="windstorm_pressure" />
+      </div>
+      <div class="field">
+        <label>Wind Direction</label>
+        <input
+          placeholder="Wind Direction"
+          type="number"
+          id="windstorm_wind_direction"
+        />
+      </div>
+      <div class="field">
+        <label>Precipitation</label>
+        <input
+          placeholder="Precipitation"
+          type="number"
+          id="windstorm_precipitation"
+        />
+      </div>
+      <div class="field">
+        <label>Wind Gust Speed</label>
+        <input
+          placeholder="Wind Gust Speed"
+          type="number"
+          id="windstorm_wind_gust_speed"
+        />
+      </div>
+    </div>
+
+    <div
+      class="max-w-lg flex justify-center items-center gap-5 flex-wrap"
+      id="landslide"
+    >
+      <div class="field">
+        <label>Height</label>
+        <input placeholder="Height" type="number" id="landslide_height" />
+      </div>
+      <div class="field">
+        <label>Slope</label>
+        <input placeholder="Slope" type="number" id="landslide_slope" />
+      </div>
+      <div class="field">
+        <label>Rainfall</label>
+        <input placeholder="Rainfall" type="number" id="landslide_rainfall" />
+      </div>
+      <div class="field">
+        <label>Historical Precipitation</label>
+        <input
+          placeholder="Historical Precipitation"
+          type="number"
+          id="landslide_historical_precipitation"
+        />
+      </div>
+    </div>
+
+    <div
+      class="max-w-4xl flex justify-center items-center gap-5 flex-wrap"
+      id="flood"
+    >
+      <div class="field">
+        <label>Max Temperature</label>
+        <input
+          placeholder="Max Temperature"
+          type="number"
+          id="flood_max_temperature"
+        />
+      </div>
+      <div class="field">
+        <label>Min Temperature</label>
+        <input
+          placeholder="Min Temperature"
+          type="number"
+          id="flood_min_temperature"
+        />
+      </div>
+      <div class="field">
+        <label>Rainfall</label>
+        <input placeholder="Rainfall" type="number" id="flood_rainfall" />
+      </div>
+      <div class="field">
+        <label>Relative Humidity</label>
+        <input
+          placeholder="Relative Humidity"
+          type="number"
+          id="flood_relative_humidity"
+        />
+      </div>
+      <div class="field">
+        <label>Wind Speed</label>
+        <input placeholder="Wind Speed" type="number" id="flood_wind_speed" />
+      </div>
+      <div class="field">
+        <label>Cloud Coverage</label>
+        <input
+          placeholder="Cloud Coverage"
+          type="number"
+          id="flood_cloud_coverage"
+        />
+      </div>
+      <div class="field">
+        <label>Bright Sunshine</label>
+        <input
+          placeholder="Bright Sunshine"
+          type="number"
+          id="flood_bright_sunshine"
+        />
+      </div>
+      <div class="field">
+        <label>Latitude</label>
+        <input placeholder="Latitude" type="number" id="flood_latitude" />
+      </div>
+      <div class="field">
+        <label>Longitude</label>
+        <input placeholder="Longitude" type="number" id="flood_longitude" />
+      </div>
+      <div class="field">
+        <label>Altitude</label>
+        <input placeholder="Altitude" type="number" id="flood_altitude" />
+      </div>
+    </div>
+
+    <div
+      class="max-w-2xl flex justify-center items-center gap-5 flex-wrap"
+      id="earthquake"
+    >
+      <div class="field">
+        <label>Latitude</label>
+        <input placeholder="Latitude" type="number" id="earthquake_latitude" />
+      </div>
+      <div class="field">
+        <label>Longitude</label>
+        <input
+          placeholder="Longitude"
+          type="number"
+          id="earthquake_longitude"
+        />
+      </div>
+      <div class="field">
+        <label>Depth</label>
+        <input placeholder="Depth" type="number" id="earthquake_depth" />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3 mt-5">
+      <button id="predict">Predict</button>
+      <p class="text-center" id="output"></p>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename= 'setup.js') }}"></script>
+  <script src="{{ url_for('static', filename= 'scripts.js') }}"></script>
+</body>
